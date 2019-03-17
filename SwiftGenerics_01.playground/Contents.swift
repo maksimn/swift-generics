@@ -7,15 +7,9 @@ func sumTwoValues<T: Numeric>(_ a: T, _ b: T) -> T {
 	return result
 }
 
-//func sumTwoValues(_ a: String, _ b: String) -> String {
-//    let result = a + b
-//    return result
-//}
-
-extension Numeric where Self = String {
-    static func +(l: Self, r: String) -> String {
-        return l + r;
-    }
+func sumTwoValues(_ a: String, _ b: String) -> String {
+    let result = a + b
+    return result
 }
 
 let a = 25.2
