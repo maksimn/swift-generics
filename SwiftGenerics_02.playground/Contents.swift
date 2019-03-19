@@ -52,7 +52,10 @@ class List<T> : Container {
     
     func removeFirstElement() {
         first = first?.next
-        size -= 1
+        
+        if size > 0 {
+            size -= 1
+        }
     }
     
     private class Node {
