@@ -2,24 +2,18 @@ import UIKit
 
 // MARK: - Задача 1 "Сделать так, чтобы закомментиррованный код работал"
 
-func sumTwoValues<T: Numeric>(_ a: T, _ b: T) -> T {
-	let result = a + b
-	return result
-}
-
-func sumTwoValues(_ a: String, _ b: String) -> String {
-    let result = a + b
-    return result
+func sumTwoValues<T>(_ a: T, _ b: T,_ summator: (T, T) -> T) -> T {
+	return summator(a, b)
 }
 
 let a = 25.2
 let b = 34.6
 
-let resultDouble = sumTwoValues(a, b)
+let resultDouble = sumTwoValues(a, b, { (u, v) -> Double in u + v })
 print(resultDouble)
 
 let c = "ABC"
 let d = "DEF"
 
-let resultString = sumTwoValues(c, d)
+let resultString = sumTwoValues(c, d, { (u, v) -> String in u + v })
 print(resultString)
